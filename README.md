@@ -1,3 +1,7 @@
+# Consulta de dados contratuais - DGRTA
+
+Chat para perguntas e respostas baseadas em arquivos/documentos dos contratos da DGRTA. Utiliza RAG (Retrieval-Augmented Generation) com busca híbrida (semântica + BM25) e integração com API de modelos da Petrobras.
+
 ## Estrutura do projeto
 
 ```
@@ -134,3 +138,12 @@ python main.py -f "Contrato 5900.0122983.22.2.pdf"
 - `python-docx` – Exportação Word
 - `openpyxl` – Exportação Excel
 - `reportlab` – Exportação PDF
+
+## Solução de problemas
+
+| Problema | Solução |
+|----------|---------|
+| Erro de certificado SSL | Configure `VERIFY_SSL=false` ou `CORP_CA_CHAIN_PATH` |
+| Nenhum PDF encontrado | Verifique se a pasta `Base/` existe e contém PDFs |
+| Respostas vazias | Defina `REINDEX=true` no `.env` e reinicie |
+| API não responde | Verifique `API_KEY_MODELOS_TEXTO` e conectividade de rede |
